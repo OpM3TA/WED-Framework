@@ -1,5 +1,4 @@
-# Windows EXploit Dev Framework
-Windows Exploit Dev. Framework 
+# Windows Exploit Dev Framework
 #
 #
 Created by Wozniak 
