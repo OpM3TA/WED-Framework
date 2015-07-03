@@ -1,4 +1,4 @@
-# WED-Framework
+# Windows EXploit Dev Framework
 Windows Exploit Dev. Framework 
 #
 #
