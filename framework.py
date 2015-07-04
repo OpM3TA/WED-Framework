@@ -30,7 +30,7 @@ def format_shellcode(output_from_Asm):
     t=t.strip()+")"
     return t
     
-def Asm(asmcode):
+def Asm(asmcode, raw=True):
     shellcode = []
     pattern = re.compile("([0-9A-F]{8})\s*([^\s]*)\s*(.*)")
 
@@ -44,7 +44,10 @@ def Asm(asmcode):
     maxlen = max([len(x[0]) for x in shellcode])
     text = ""
     for (sc, addr, code) in shellcode:
-        text += "%s # %s:    %s\n" % (sc.ljust(maxlen+1), addr, code)
+        if raw==True:
+            text+= "%s\n" %sc.ljust(maxlen+1)
+        else:
+            text += "%s # %s:    %s\n" % (sc.ljust(maxlen+1), addr, code)
     return text
 
 """
